@@ -1,14 +1,14 @@
 {
     "builds": [
       {
-        "src": "backend/wsgi.py",
+        "src": "ecommerce-final/wsgi.py",
         "use": "@vercel/python"
       }
     ],
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "backend/wsgi.py"
+        "dest": "ecommerce-final/wsgi.py"
       }
     ]
 }
