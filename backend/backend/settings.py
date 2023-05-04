@@ -11,10 +11,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config("SECRET_KEY")
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = os.environ.get('DEBUG')
 
 ALLOWED_HOSTS = []
 
@@ -145,12 +145,12 @@ WSGI_APPLICATION = "backend.wsgi.application"
 Default_Database_Name = BASE_DIR / "db.sqlite3"
 DATABASES = {
     "default": {
-        'ENGINE': config('ENGINE', default='django.db.backends.sqlite3'),
-        'NAME': config('NAME', default=Default_Database_Name),
-        'USER': config('USER', default=''),
+        'ENGINE': os.environ.get('ENGINE'),
+        'NAME': os.environ.get('NAME'),
+        'USER': os.environ.get('USER'),
         'PASSWORD' : 'mcNQsF4jSl2q',
-        'HOST': config('HOST', default=''),
-        'PORT': config('PORT', default=''),
+        'HOST': os.environ.get('HOST'),
+        'PORT': os.environ.get('PORT'),
     }
 }
 
@@ -208,13 +208,13 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
 
-DROPBOX_APP_KEY = config('DROPBOX_APP_KEY')
-DROPBOX_APP_SECRET_KEY = config('DROPBOX_APP_SECRET_KEY')
+DROPBOX_APP_KEY = os.environ.get('DROPBOX_APP_KEY')
+DROPBOX_APP_SECRET_KEY = os.environ.get('DROPBOX_APP_SECRET_KEY')
 	
-DROPBOX_OAUTH2_TOKEN = config('DROPBOX_OAUTH2_TOKEN')
-DROPBOX_APP_ACCESS_TOKEN = config('DROPBOX_OAUTH2_TOKEN')
-DROPBOX_ACCESS_TOKEN = config('DROPBOX_OAUTH2_TOKEN')
-DROPBOX_ROOT_PATH = config('DROPBOX_ROOT_PATH')
+DROPBOX_OAUTH2_TOKEN = os.environ.get('DROPBOX_OAUTH2_TOKEN')
+DROPBOX_APP_ACCESS_TOKEN = os.environ.get('DROPBOX_OAUTH2_TOKEN')
+DROPBOX_ACCESS_TOKEN = os.environ.get('DROPBOX_OAUTH2_TOKEN')
+DROPBOX_ROOT_PATH = os.environ.get('DROPBOX_ROOT_PATH')
 
 CORS_ALLOW_ALL_ORIGINS = True
 
