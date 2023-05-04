@@ -209,7 +209,7 @@ MEDIA_ROOT = '/images'
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
 
 # DROPBOX_APP_KEY = os.environ.get('DROPBOX_APP_KEY')
