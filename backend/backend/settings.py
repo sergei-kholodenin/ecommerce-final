@@ -16,7 +16,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -193,6 +193,10 @@ USE_TZ = True
 STATIC_URL = "static/"
 MEDIA_URL = "/images/"
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+MEDIA_URLS ='/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 STATICFILES_DIRS = [
     BASE_DIR / "static",
     BASE_DIR / "frontend/build/static"
@@ -217,4 +221,3 @@ DROPBOX_ACCESS_TOKEN = os.environ.get('DROPBOX_OAUTH2_TOKEN')
 DROPBOX_ROOT_PATH = os.environ.get('DROPBOX_ROOT_PATH')
 
 CORS_ALLOW_ALL_ORIGINS = True
-
